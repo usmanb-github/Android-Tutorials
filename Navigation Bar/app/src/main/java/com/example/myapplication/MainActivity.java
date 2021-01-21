@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.email:
-                        Intent profileIntent = new Intent(MainActivity.this, emailTest.class);
-                        startActivity(profileIntent);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,
+                                new emailTest()).commit();
                         break;
                 }
                 return true;
